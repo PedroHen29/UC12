@@ -1,0 +1,12 @@
+p{
+    display: none;
+    background-color: yellow;
+    height: 100px;
+}
+
+div{
+    background-color: blue;
+    height: 100px;
+    display: inline-block;
+    width: 100px;
+}
