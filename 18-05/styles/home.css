@@ -1,0 +1,31 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.banner-principal{
+    height: 500px;
+    /*adiciona uma imagem como fundo da div*/
+    background-image: url(https://images.pexels.com/photos/4860589/pexels-photo-4860589.jpeg);
+    /*ajusta o tamanho da imagem*/
+    background-size: cover;
+    /*a imagem fica fixa mesmo quando relomas a pagina*/
+    background-attachment: fixed;
+}
+
+.carrinho{
+    top: 150px;
+    width: 30px;
+    position: fixed;
+    right: 10px;
+    bottom: 20px;
+}

@@ -1,0 +1,52 @@
+@font-face {
+    font-family: "Donatello";
+    src: url(fonts/Donatello.ttf);
+}
+@font-face {
+    font-family: "Vogue";
+    src: url(fonts/Vogue.ttf);
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.relative{
+    background-color: lightblue;
+    padding: 10px;
+    width: fit-content;
+    position: relative;
+    margin: 20px;
+}
+
+.absolute{
+    background-color: aqua;
+    padding: 1px 4px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    border-radius: 50%;
+}
+
+.whats{
+    top: 150px;
+    width: 30px;
+    position: fixed;
+    right: 10px;
+    bottom: 20px;
+}
+
+.scroll{
+    height: 250px;
+    overflow-y: scroll;
+    border: 20px;
+    border-color: black;
+    padding: 0px 20px;
+}
+
+.scroll h1{
+    background-color: yellow;
+    position: sticky;
+    top: 0;
+}
