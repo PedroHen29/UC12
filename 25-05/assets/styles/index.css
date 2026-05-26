@@ -1,0 +1,125 @@
+.container-pai{
+    background-color: black;
+    padding: 20px;
+    height: 500px;
+    /*Torna um container flexivel*/
+    display: flex;
+    /*indica em que direção os filhos seram dispostos
+    (linhas ou colunas)*/
+    flex-direction: row;
+    /*indica como os filhos vão ser dispostos no eixo principal
+    IMPORTANTE: em row(linha) o eixo principal é  a horizontal
+    em column(coluna) é a vertical*/
+    justify-content: center;
+    /*indica como os filhos vão ser dispostos no eixo secundario
+    IMPORTANTE: em row(linha) o eixo secundario é  a vertical
+    em column(coluna) é a horizontal*/
+    align-items: center;
+    gap: 20px;
+
+    /*controla se os itens vao quebrar em linhas diferentes (um em baixo do outro)*/
+    flex-wrap: wrap;
+}
+
+.container-filho{
+    background-color: brown;
+    padding: 50px;
+    align-self: flex-start;
+}
+
+.start{
+    align-self: flex-start;
+}
+
+header{
+    background-color: black;
+    height: 100px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+    
+}
+
+header a{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+header nav{
+    display: flex;
+    gap: 20px;
+     
+}
+
+header a:hover{
+    transform: scale(1.1);
+    transition: ease 1s;
+}
+
+header div{
+    
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.principal{
+    background-color: rgb(0, 174, 255);
+    height: 87vh;
+    width: 200vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.secundaria{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgb(16, 119, 133);
+    padding: 10px 10px;
+    height: 400px;
+    width: 350px;
+    
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+#img2{
+    width: 100%;
+    height: 205px;
+    border-radius: 10px;
+}
+
+#img3{
+    width: 100%;
+    height: 205px;
+    border-radius: 10px;
+}
+
+button{
+    border-radius: 3px;
+    color: white;
+    border: none;
+    width: 25%;
+    background-color: rgb(17, 64, 249);
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: rgb(0, 51, 255);
+    transform: scale(1.1);
+    transition: ease 0.5s;
+}
