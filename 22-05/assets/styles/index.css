@@ -1,0 +1,61 @@
+/* .container-pai{
+    background-color: black;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.container-filho{
+    background-color: rgb(97, 31, 3);
+    color: white;
+    padding: 50px;
+} */
+
+body{
+    background-color: black;
+}
+
+header{
+    background-color: rgb(217, 16, 16);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+}
+
+nav{
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.banner-principal{
+    height: 80vh; /* 80% d\a altura da tela*/
+    background-image: url(https://images.pexels.com/photos/37681897/pexels-photo-37681897.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-info{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.banner-info div{
+    display: flex;
+    text-align: center;
+    width: 50%;
+}
