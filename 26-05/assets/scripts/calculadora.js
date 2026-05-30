@@ -1,26 +1,85 @@
-// Numeros
-const btn = document.getElementById("btn")
-const btn1 = document.getElementById("btn1")
-const btn2 = document.getElementById("btn2")
-const btn3 = document.getElementById("btn3")
-const btn4 = document.getElementById("btn4")
-const btn5 = document.getElementById("btn5")
-const btn6 = document.getElementById("btn6")
-const btn7 = document.getElementById("btn7")
-const btn8 = document.getElementById("btn8")
-const btn9 = document.getElementById("btn9")
+const numeros = document.querySelectorAll(".numero")
+const visor = document.getElementById("h1")
+const operacoes = document.querySelectorAll(".operacao")
 
-// Operações
-const mais = document.getElementById("mais")
-const menos = document.getElementById("menos")
-const divisao = document.getElementById("divisao")
-const vezes = document.getElementById("vezes")
-const igual = document.getElementById("igual")
-const limpar = document.getElementById("limpar")
+let primeiroNumero = ""
+let segundoNumero = ""
+let operador = ""
+let numeroVazio = false
+numeros.forEach(botao => {
+    botao.addEventListener("click", ()=>{
+        if(!numeroVazio){
+            primeiroNumero += botao.textContent
+            visor.textContent = primeiroNumero
+        }else{
+            segundoNumero += botao.textContent;
+            visor.textContent = segundoNumero;
+        }
+    })
+})
 
-//Visor
-const h1 = document.querySelector("h1")
+document.getElementById("mais").addEventListener("click", () =>{
+    operador = "+"
+    numeroVazio = true
+})
 
-btn.addEventListener("click", () =>{
-    h1.textContent = "0"
+document.getElementById("menos").addEventListener("click", () => {
+    operador = "-"
+    numeroVazio = true
+}) 
+
+document.getElementById("vezes").addEventListener("click", () => {
+    operador = "*"
+    numeroVazio = true
+})
+
+document.getElementById("divisao").addEventListener("click", () => {
+    operador = "/"
+    numeroVazio = true
+})
+
+document.getElementById("igual").addEventListener("click", () => {
+
+    const num1 = Number(primeiroNumero)
+    const num2 = Number(segundoNumero)
+    let resultado;
+    switch(operador){
+        case "+":
+            resultado = num1 + num2
+            break
+        case "-":
+            resultado = num1 - num2
+            break
+        case "*":
+            resultado = num1*num2
+            break
+        case "/":
+            if(num2 == 0){
+                alert("Não pode dividir um numero por 0 ")
+                
+            }else{
+                resultado = num1/num2
+            }
+            break
+
+            default:
+                resultado = "Erro"
+                
+}
+
+    visor.textContent = resultado
+
+    primeiroNumero = resultado.toString()
+    segundoNumero = ""
+    operador = ""
+    numeroVazio = false
+})
+
+document.getElementById("limpar").addEventListener("click", () => {
+    primeiroNumero = ""
+    segundoNumero = ""
+    operador = ""
+    numeroVazio = false
+
+    visor.textContent = "0"
 })
