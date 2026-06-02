@@ -7,35 +7,57 @@
     <link rel="stylesheet" href="assets/styles/calculadora.css">
 </head>
 <body>
-    <div class="base">
-        <div class="visor">
-            <h1>1</h1>
-        </div>
+    
+    <div class="fundo">
+        <div class="base">
+            
+                <h1 class="resultado">0</h1>
+            
+            
+            <table>
+                <tr>
+                    <td colspan="3"><button class="numero" id="C">C</button></td>
+                    <td><button class="operacao" id="mais">+</button></td>
+                </tr>
+                <tr>
+                    <td><button class="numero">7</button></td>
+                    <td><button class="numero">8</button></td>
+                    <td><button class="numero">9</button></td>
+                    <td><button class="operacao" id="menos">-</button></td>
+                    
+                    
+                </tr>
 
+                <tr>
+                    <td><button class="numero">4</button></td>
+                    <td><button class="numero">5</button></td>
+                    <td><button class="numero">6</button></td>
+                    <td><button class="operacao" id="vezes">x</button></td>
+                    
+                    </tr>
 
-         <div class="numeros">
-            <button class = "numero" id="btn">0</button>
-            <button class = "numero" id="btn1">1</button>
-            <button class = "numero" id="btn2">2</button>
-            <button class = "numero" id="btn3">3</button>
-            <button class = "numero" id="btn4">4</button>
-            <button class = "numero" id="btn5">5</button>
-            <button class = "numero" id="btn6">6</button>
-            <button class = "numero" id="btn7">7</button>
-            <button class = "numero" id="btn8">8</button>
-            <button class = "numero" id="btn9">9</button>
+                    <tr>
+                        <td><button class="numero">1</button></td>
+                        <td><button class="numero">2</button></td>
+                        <td><button class="numero">3</button></td>
+                        <td><button class="operacao" id="divisao">/</button></td>
+                        
+                    </tr>
+
+                    <tr>
+                        <td colspan="2"><button class="numero" id="zero">0</button></td>
+                        <td><button class="numero">.</button></td>
+                        <td><button class="operacao" id="igual">=</button></td>
+                        
+                        
+                    </tr>
+            </table>
+            
         </div>
-        
-        <div class="operacoes">
-        <button class = "operacao" id="mais">+</button>
-        <button class = "operacao" id="menos">-</button>
-        <button class = "operacao" id="vezes">*</button>
-        <button class = "operacao" id="divisao">/</button>
-        <button class = "operacao" id="igual">=</button>
-        <button class = "operacao" id="limpar">C</button>
-        </div>
-        
-    </div> 
+        <button class="mudarTema">
+            <img class="noite_dia" src="assets/img/sun.png" alt="">
+        </button> 
+    </div>
     <script src="assets/scripts/calculadora.js"></script>
 </body>
 </html>
