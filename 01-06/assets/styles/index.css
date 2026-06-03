@@ -42,7 +42,9 @@ a{
     flex-direction: column;
     background-color: black;
     position: relative;
-    
-
+    top: 100%;
+    right: 10px;
+    padding: 7px;
+    border-radius: 0px 0px 10px 10x;
    }
 }
