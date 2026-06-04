@@ -34,8 +34,8 @@ remover.addEventListener("click", () => {
 
 // EXERCICIO 5
 const input = document.getElementById("input")
-const textos = document.querySelector(".texto")
+const texto = document.getElementById("texto")
 
 input.addEventListener("change", () => {
-    textos.textContent = input.value
+    texto.textContent = input.value
 })
