@@ -5,7 +5,7 @@ const perguntas = [
         categoria: "EUROPA",
         texto: "Qual o time com mais conquistas de Champions League?",
         opcaoes: ["Barcelona", "Liverpool", "Real Madrid", "Milan"],
-        corrta: 2,
+        correta: 2,
         explicacao: ""
     },
 
@@ -14,7 +14,7 @@ const perguntas = [
         categoria: "COPA DO MUNDO",
         texto: "Qual o artilheiro da Copa do Mundo?",
         opcaoes: ["Messi", "Mbappe", "Ronaldo Fenômeno", "Klose"],
-        corrta: 3,
+        correta: 3,
         explicacao: ""
     },
 
@@ -23,7 +23,7 @@ const perguntas = [
         categoria: "JOGADORES",
         texto: "Quem ganhou a Bola de Ouro em 2007?",
         opcaoes: ["Kaka", "Messi", "Cristiano Ronaldo", "Ronaldinho"],
-        corrta: 0,
+        correta: 0,
         explicacao: ""
     },
 
@@ -31,7 +31,7 @@ const perguntas = [
         categoria: "JOGADORES",
         texto: "Qual jogador marcou mais gols na historia do futebol(segundo a FIFA)",
         opcaoes: ["Romario", "Messi", "Cristiano Ronaldo", "Pele"],
-        corrta: 2,
+        correta: 2,
         explicacao: ""
     },
 
@@ -39,7 +39,7 @@ const perguntas = [
         categoria: "COPA DO MUNDO",
         texto: "Qual seleção ganhou a primeira Copa do Mundo",
         opcaoes: ["Uruguai", "Brasil", "Espanha", "Alemanhã"],
-        corrta: 0,
+        correta: 0,
         explicacao: ""
     },
 
@@ -47,7 +47,7 @@ const perguntas = [
         categoria: "EUROPA",
         texto: "Quem ganhou a Champions League de 2010",
         opcaoes: ["Milan", "Rel Madrid", "Inter de Milão", "Barcelona"],
-        corrta: 2,
+        correta: 2,
         explicacao: ""
     },
 
@@ -55,23 +55,23 @@ const perguntas = [
         categoria: "JOGADORES",
         texto: "Quem ficou em terceiro lugar na Bola de Ouro de 2018 ",
         opcaoes: ["Salah", "Grizmann", "Cristiano Ronaldo", "Messi"],
-        corrta: 1,
+        correta: 1,
         explicacao: ""
     },
 
     {
         categoria: "AMERICA DO SUL",
         texto: "Qual time tem mais titulos de Libertadores",
-        opcaoes: ["Flamengo", "Palmeiras", "River Plate", "Boca Juniors"],
-        corrta: 0,
+        opcaoes: ["Flamengo", "Independiente", "River Plate", "Boca Juniors"],
+        correta: 1,
         explicacao: ""
     },
 
     {
-        categoria: "JOGADORES",
-        texto: "Quem ganhou a Bola de Ouro em 2007?",
-        opcaoes: ["Kaka", "Messi", "Cristiano Ronaldo", "Ronaldinho"],
-        corrta: 0,
+        categoria: "AMERICA DO SUL",
+        texto: "Qual o maior time do Brasil",
+        opcaoes: ["Flamengo", "Gremio", "São Paulo", "Boca Juniors"],
+        correta: 1,
         explicacao: ""
     },
 
@@ -79,7 +79,7 @@ const perguntas = [
         categoria: "JOGADORES",
         texto: "Quem é o melhor jogador da historia(Tirando o Pele)?",
         opcaoes: ["Zidane", "Messi", "Cristiano Ronaldo", "Romario Fenomeno"],
-        corrta: 1,
+        correta: 1,
         explicacao: ""
     }
 ]
@@ -141,40 +141,43 @@ function carregarPergunta(){
     })
 }
 
-function responder(indiceEscolhido, btnClicado){
-    const pergunta = perguntas[indiceAtual]
-    const acertou = indiceEscolhido === pergunta.corrta
+function responder(indiceEscolhido, btnClicado) {
+    const pergunta = perguntas[indiceAtual];
+    const acertou = indiceEscolhido === pergunta.correta
 
+    // Desabilita todos os botões
     document.querySelectorAll(".opcao-btn").forEach((btn, i) => {
-        btn.disable = true;
-        if (i=== pergunta.corrta) btn.classList.add("correta")
-        if(i === indiceEscolhido && !acertou) btn.classList.add("errada")
-    })
+        btn.disabled = true;
+        if (i === pergunta.correta) btn.classList.add('correta');
+        if (i === indiceEscolhido && !acertou) btn.classList.add("errada");
+    });
 
-    if(acertou){
-        pontos += 10
-        acertou ++
+    // Atualiza pontos e registro
+    if (acertou) {
+        pontos += 10;
+        acertos++;
     }
-    respostas.push({pergunta, ecolhida: indiceEscolhido, acertos})
+    respostas.push({ pergunta, escolhida: indiceEscolhido, acertou });
 
-    feedback.classList.remove("escondido", "feedback-certo", "feedback-errado")
-    if(acertou){
-        feedback.classList.add("feedback-certo")
-        feedbackIcone.innerHTML = "✅"
-        feedbackTexto.textContent = `Correto! ${pergunta.explicacao}`
-    }else{
-        feedback.classList.add("feedback-errado")
-        feedbackIcone.innerHTML = "❌"
-        feedbackTexto.textContent = `Errado! ${pergunta.explicacao}`
+    // Mostra feedback
+    feedback.classList.remove("escondido", "feedback-certo", "feedback-errado");
+    if (acertou) {
+        feedback.classList.add("feedback-certo");
+        feedbackIcone.innerHTML = "✅";
+        feedbackTexto.textContent = `Correto! ${pergunta.explicacao}`;
+    } else {
+        feedback.classList.add("feedback-errado");
+        feedbackIcone.innerHTML = "❌";
+        feedbackTexto.textContent = `Errado! ${pergunta.explicacao}`;
     }
 
-    btnProxima.classList.remove("escondido")
+    btnProxima.classList.remove("escondido");
 
-    if(indiceAtual === perguntas.length -1){
-        btnProxima.innerHTM =`Ver Resultado <i class="fas fa-flag-checkered"></i>`
-
-    }else {
-        btnProxima.innerHTML = `Proxima <! class="fas fa-arrow-right"></i>`
+    // Última pergunta: muda texto do botão
+    if (indiceAtual === perguntas.length - 1) {
+        btnProxima.innerHTML = `Ver Resultado <i class="fas fa-flag-checkered"></i>`;
+    } else {
+        btnProxima.innerHTML = `Próxima <i class="fas fa-arrow-right"></i>`;
     }
 }
 
