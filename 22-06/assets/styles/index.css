@@ -1,0 +1,57 @@
+/* base.css */
+
+/* Tema claro — padrão para todos */
+:root {
+  --color-bg:      #5ed7f2;
+  --color-surface: #d0e3f7;
+  --color-text:    #1e1e1e;
+  --color-border:  #e5e7eb;
+  --color-botao: #c3d1ec;
+}
+
+/* Tema escuro automático — ativado quando o SO do usuário usa tema escuro */
+
+
+/* Tema escuro manual — ativado pelo botão da página via JavaScript */
+/* Esta classe sobrescreve a media query quando necessário */
+
+.dark {
+  --color-bg:      #0f172a;
+  --color-surface: #1e293b;
+  --color-text:    #f1f5f9;
+  --color-border:  #334155;
+  --color-botao: #86898f;
+}
+
+/* Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+.page{
+    background-color: var(--color-surface);
+    color: var(--color-text);
+
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    background-color: var(--color-bg);
+    height: 2.5rem;
+}
+
+.main{
+    background-color: var(--color-text-muted);
+}
+
+#alterarTema{
+    border: none;
+    border-radius: 2px;
+    width: 8rem;
+    background-color: var(--color-botao)
+}
