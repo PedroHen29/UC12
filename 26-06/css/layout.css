@@ -1,0 +1,12 @@
+/* layout.css — Estrutura da página: container, header, main, footer, grids */
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    font-family: sans-serif; color: #333; 
+}   
+.container { max-width: 1200px; margin: 0 auto; }   
+.site-header { background: var(--color-primary); } 
+.site-footer { padding: 2rem 0; }     
