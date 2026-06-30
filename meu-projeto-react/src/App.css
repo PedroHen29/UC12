@@ -1,0 +1,44 @@
+.btn-primario{
+  background-color: greenyellow;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+}
+
+.btn-secundario{
+  background-color: red;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+}
+
+.btn-desativado{
+  background-color: rgb(104, 104, 104);
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+}
+
+.card-um{
+  background-color: rgb(0, 183, 255);
+  width: 300px;
+  height: 400px;
+  margin: 20px;
+}
+
+.card-dois{
+  background-color: rgb(248, 53, 53);
+  width: 300px;
+  height: 400px;
+  margin: 20px;
+}
+
+.card-tres{
+  background-color: rgb(231, 210, 55);
+  width: 300px;
+  height: 400px;
+  margin: 20px;
+}
