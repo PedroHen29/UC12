@@ -8,16 +8,17 @@ function Depoimento({texto, autor, cargo}) {
         </p>
 
         <div className='mt-6 flex items-center gap-3'>
-            {/** pçaceholder da imagem*/}
+            {/* Placeholder da imagem */}
             <div className='w-10 h-10 rounded-full bg-cafe-900 border-2 border-cafe-900'>
 
             </div>
-
             <div>
                 <p className='text-sm font-semibold text-cafe-900'>{autor}</p>
-                <p className='text-xs text-cafe-600'>{cargo}</p>
+                <p className='text xs text-cafe-600'>{cargo}</p>
             </div>
+
         </div>
+
     </div>
   )
 }
