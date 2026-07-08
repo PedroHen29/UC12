@@ -1,0 +1,8 @@
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-creme);
+  color: var(--fundo-base-900);
+}
+.btn-curtir.btn-vermelho {
+  color: #ff0000;
+}
