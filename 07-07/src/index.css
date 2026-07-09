@@ -2,7 +2,19 @@ body {
   font-family: var(--font-body);
   background-color: var(--color-creme);
   color: var(--fundo-base-900);
+  background-color: white;
+  color: black;
 }
 .btn-curtir.btn-vermelho {
   color: #ff0000;
+}
+
+.tema-escuro{
+   background-color: rgb(45, 50, 67);
+   color: rgb(255, 255, 255);
+}
+
+.tema-claro{
+  background-color: white;
+  color: black;
 }

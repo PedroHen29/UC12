@@ -8,7 +8,7 @@ function CardProduto({ nome, descricao, preco, imagem }) {
                     <img src={imagem} alt="Café" className='rounded-3xl w-full object-cover' />
                 </span>
             </div>
-
+            
             <h3 className='font-display text-xl font-semibold text-cafe-900'>
                 {nome}
             </h3>

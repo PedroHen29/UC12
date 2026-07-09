@@ -1,8 +1,10 @@
 import React from 'react'
+import { use } from 'react';
 import { useState } from "react";
 function Contador() {
 const [numero, setNumero] = useState(0)
 const [curtida, setCurtida] = useState(0)
+
 function aumentar(){
     setNumero(numero +1)
 }
@@ -18,11 +20,18 @@ if(numero <0){
   setNumero(0)
 }
 
-function curtir(){
+function curtir(){      
   setCurtida(curtida + 1)
 }
 
+function Temaescuro(){
+  document.body.classList.add("tema-escuro");
+}
+function Temaclaro(){
+  document.body.classList.remove("tema-escuro")
+}
 const corCurtida = curtida >= 100? 'btn-curtir btn-vermelho' : 'btn-curtir';
+
   return (
     <>
       <h1>{numero}</h1>
@@ -32,7 +41,12 @@ const corCurtida = curtida >= 100? 'btn-curtir btn-vermelho' : 'btn-curtir';
         <hr /> 
         
 
-        <button className={corCurtida}  onClick={curtir}>❤️: {curtida}</button>
+        <button className={corCurtida}  onClick={curtir}> ❤️ : {curtida}</button>
+        <hr />
+
+        <button onClick={Temaclaro}>TemaClaro</button>
+
+        <button onClick={Temaescuro}>Tema Escuro</button>
        
     </>
   
