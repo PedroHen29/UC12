@@ -3,13 +3,14 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Contador from './components/Contador'
-
+import ContadorInt from './components/ContadorInt'
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
     <>
      <Contador/>
+     <ContadorInt/>
     </>
   )
 }

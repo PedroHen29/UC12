@@ -18,3 +18,11 @@ body {
   background-color: white;
   color: black;
 }
+
+.ligado{
+  color: #000000;
+background-color: #ff0000;
+}
+.desligado{
+  background-color: blue;
+}

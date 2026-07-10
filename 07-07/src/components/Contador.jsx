@@ -30,6 +30,17 @@ function Temaescuro(){
 function Temaclaro(){
   document.body.classList.remove("tema-escuro")
 }
+const [desligado, setligado] = useState()
+function ligar(){
+  let interruptor = document.getElementById("btn-interruptor")
+    interruptor.classList.toggle('ligado')
+    if(interruptor.textContent == "desligado"){
+      interruptor.textContent = "ligado"
+    }else{
+      interruptor.textContent = "desligado"
+    }
+}
+
 const corCurtida = curtida >= 100? 'btn-curtir btn-vermelho' : 'btn-curtir';
 
   return (
@@ -41,13 +52,17 @@ const corCurtida = curtida >= 100? 'btn-curtir btn-vermelho' : 'btn-curtir';
         <hr /> 
         
 
-        <button className={corCurtida}  onClick={curtir}> ❤️ : {curtida}</button>
+        <button  className={corCurtida}  onClick={curtir}> ❤️ : {curtida}</button>
         <hr />
 
+        <button id='btn-interruptor' onClick={ligar} className='desligado' >desligado</button>
+        <hr />
         <button onClick={Temaclaro}>TemaClaro</button>
 
         <button onClick={Temaescuro}>Tema Escuro</button>
-       
+        <hr />
+      
+
     </>
   
   )
