@@ -21,8 +21,9 @@ body {
 
 .ligado{
   color: #000000;
-background-color: #ff0000;
+  background-color: #f44c4c;
 }
 .desligado{
-  background-color: blue;
+  background-color: rgb(58, 58, 90);
+  color: white;
 }
